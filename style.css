@@ -1,0 +1,21 @@
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 5rem;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  font-size: 22px;
+}
+
+#borderRow {
+  border-bottom: 10px solid black;
+  margin-top: 5rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
