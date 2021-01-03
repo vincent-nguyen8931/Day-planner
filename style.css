@@ -31,3 +31,15 @@ h2 {
 #planner {
   margin: 10rem;
 }
+
+.present {
+  background-color: red;
+}
+
+.past {
+  background-color: lightgray;
+}
+
+.future {
+  background-color: green;
+}
