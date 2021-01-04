@@ -1,6 +1,7 @@
 var timeText;
 var rowClicked;
 var rowSelected;
+var storageLocation;
 var timeSwitchCount = 0;
 var time = 1;
 var currentTime = dayjs().hour();
@@ -23,38 +24,47 @@ function checkRow() {
     case "saveIcon1":
       rowClicked = "events-9AM";
       rowSelected = "#textArea1";
+      storageLocation = getJSON("events-9AM");
       break;
     case "saveIcon2":
       rowClicked = "events-10AM";
       rowSelected = "#textArea2";
+      storageLocation = getJSON("events-10AM");
       break;
     case "saveIcon3":
       rowClicked = "events-11AM";
       rowSelected = "#textArea3";
+      storageLocation = getJSON("events-11AM");
       break;
     case "saveIcon4":
       rowClicked = "events-12PM";
       rowSelected = "#textArea4";
+      storageLocation = getJSON("events-12PM");
       break;
     case "saveIcon5":
       rowClicked = "events-1PM";
       rowSelected = "#textArea5";
+      storageLocation = getJSON("events-1PM");
       break;
     case "saveIcon6":
       rowClicked = "events-2PM";
       rowSelected = "#textArea6";
+      storageLocation = getJSON("events-2PM");
       break;
     case "saveIcon7":
       rowClicked = "events-3PM";
       rowSelected = "#textArea7";
+      storageLocation = getJSON("events-3PM");
       break;
     case "saveIcon8":
       rowClicked = "events-4PM";
       rowSelected = "#textArea8";
+      storageLocation = getJSON("events-4PM");
       break;
     case "saveIcon9":
       rowClicked = "events-5PM";
       rowSelected = "#textArea9";
+      storageLocation = getJSON("events-5PM");
       break;
   }
 }
@@ -113,7 +123,7 @@ for (i = 1; i < 10; i++) {
   // pulls textarea box from bootstrap and appends it to the column plannerText for each row.
   $("#plannerText" + i).append("<section class='input-group'>");
   $("#plannerText" + i).append("<section class='input-group-append'>");
-  $("#plannerText" + i).append("<textarea class='form-control' id='textArea" + i + "' aria-label='With textarea'></textarea>");
+  $("#plannerText" + i).append("<textarea class='form-control' name='textArea" + i + "' id='textArea" + i + "' aria-label='With textarea'></textarea>");
   $("#plannerText" + i).append("</section>");
   $("#plannerText" + i).append("</section>");
   $("#timeRow" + i).append("<article class='col-1' style='border:1px solid black; background:cyan;' id=saveIcon" + i + "></article>");
@@ -127,38 +137,37 @@ function changeRowColor() {
     // if statement checks for current time being greater than the array of possible times. When true, the row is given the class "past" to represent a past time.
     if (currentTime > possibleTimes[i]) {
       $("#textArea" + i).addClass("past");
-      $("#textArea" + i).removeClass("present");
-      $("#textArea" + i).removeClass("future");
     }
     // if statement checks for current time being less than the array of possible times. When true, the row is given the class "future" to represent a future time.
     else if (currentTime < possibleTimes[i]) {
-      $("#textArea" + i).removeClass("past");
-      $("#textArea" + i).removeClass("present");
       $("#textArea" + i).addClass("future");
     }
     // if neither of the above are true, then the class "present" will be added to make that row be considered the present time.
     else {
-      $("#textArea" + i).removeClass("past");
       $("#textArea" + i).addClass("present");
-      $("#textArea" + i).removeClass("future");
     }
   }
 }
 
 changeRowColor();
-
+// creates an event listener 
 for (i = 1; i < 10; i++) {
   $("#saveIcon" + i).click(saveInput);
-  // $("#saveIcon" + i).click(function () {
-  //   alert("it works");
-  // });
 }
+
 function saveInput() {
   rowClicked = this.id;
-  checkRow(rowClicked);
-  console.log($(rowSelected).val())
+  checkRow();
   setJSON(rowClicked, $(rowSelected).val());
-
 }
 
-// $("#textArea" + i).textContent
+
+function retrieveLocalStorage() {
+  for (i = 1; i < 10; i++) {
+    rowClicked = "saveIcon" +i;
+    checkRow();
+    $(rowSelected).val(storageLocation)
+  }
+}
+
+retrieveLocalStorage();
