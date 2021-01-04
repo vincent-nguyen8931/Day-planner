@@ -19,7 +19,7 @@ function getJSON(key) {
 // appends current day of the week and date to header section
 $("#headerRow").append("<h2>" + dayjs().format("dddd, MMMM D") + "</h2>");
 
-// when function is called, the rowClicked variable is changed in function saveInput at line 149, the switch statement will create the local storage key and store into rowClicked, change rowSelected into textarea ID, and storageLocation into local storage pull of value in that key. 
+// when function is called, the rowClicked variable is changed in function saveInput at line 147, the switch statement will create the local storage key and store into rowClicked, change rowSelected into textarea ID, and storageLocation into local storage pull of value in that key. 
 function checkRow() {
   switch (rowClicked) {
     case "saveIcon1":
@@ -70,7 +70,7 @@ function checkRow() {
   }
 }
 
-// function changes the text of the time column into the text provided under each case. variable timeSwitchCount is set 0 globally and incremented in the for loop on line 106.
+// function changes the text of the time column into the text provided under each case. variable timeSwitchCount is set 0 globally and incremented in the for loop on line 107.
 function changeTime() {
   switch (timeSwitchCount) {
     case 0:
@@ -108,18 +108,16 @@ for (i = 1; i < 10; i++) {
   // calls to the function on line 74 to retrieve the proper text for the time column.
   changeTime();
   // makes a new row and increments time by 1 so that another time slot can be created.
-  $("#planner").append("<article class='row' style='margin-left:15%;' id=timeRow" + time++ + "></article>");
-  $("#timeRow" + i).append("<article class='col-1' style='text-align:right; padding-top:5px; border:1px solid black;'>" + timeText + "</article>");
-  $("#timeRow" + i).append("<article class='col' id='plannerText" + i + "'></article>");
+  $("#planner").append("<article class='row' style='margin-left:15%;' id=timeRow" + time++ + ">");
+  $("#timeRow" + i).append("<article class='col-1' style='text-align:right; padding-top:5px; border:1px solid black;'>" + timeText);
+  $("#timeRow" + i).append("<article class='col' id='plannerText" + i + "'>");
   // pulls textarea box from bootstrap and appends it to the column plannerText for each row. used for taking in user input.
   $("#plannerText" + i).append("<section class='input-group'>");
   $("#plannerText" + i).append("<section class='input-group-append'>");
-  $("#plannerText" + i).append("<textarea class='form-control' name='textArea" + i + "' id='textArea" + i + "' aria-label='With textarea'></textarea>");
-  $("#plannerText" + i).append("</section>");
-  $("#plannerText" + i).append("</section>");
+  $("#plannerText" + i).append("<textarea class='form-control' name='textArea" + i + "' id='textArea" + i + "' aria-label='With textarea'>");
   // creates a column so that the button image can be appended to it.
-  $("#timeRow" + i).append("<article class='col-1' style='border:1px solid black; background:cyan;' id=saveIcon" + i + "></article>");
-  $("#saveIcon" + i).append("<i class='far fa-save' style='padding-left: 40%; padding-top: 35%;' id=saveBtn></i>");
+  $("#timeRow" + i).append("<article class='col-1' style='border:1px solid black; background:cyan;' id=saveIcon" + i + ">");
+  $("#saveIcon" + i).append("<i class='far fa-save' style='padding-left: 40%; padding-top: 35%;' id=saveBtn>");
   // increments by one to move switch statement in changeTIme function down to the next case.
   timeSwitchCount++;
 }
