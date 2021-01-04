@@ -119,7 +119,7 @@ for (i = 1; i < 10; i++) {
   $("#plannerText" + i).append("</section>");
   // creates a column so that the button image can be appended to it.
   $("#timeRow" + i).append("<article class='col-1' style='border:1px solid black; background:cyan;' id=saveIcon" + i + "></article>");
-  $("#saveIcon" + i).append("<i class='far fa-save' style='padding-right: 40%; padding-top: 35%;' id=saveBtn></i>");
+  $("#saveIcon" + i).append("<i class='far fa-save' style='padding-left: 40%; padding-top: 35%;' id=saveBtn></i>");
   // increments by one to move switch statement in changeTIme function down to the next case.
   timeSwitchCount++;
 }
