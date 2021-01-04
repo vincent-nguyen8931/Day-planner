@@ -1,3 +1,4 @@
+/* Makes landing page header the center of attention at the top of the page */
 h1 {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
@@ -11,7 +12,7 @@ h2 {
   text-align: center;
   font-size: 22px;
 }
-
+/* creates the black border seperating the header from the planner content below it*/
 #borderRow {
   border-bottom: 10px solid black;
   margin-top: 5rem;
@@ -19,27 +20,27 @@ h2 {
   left: 0;
   right: 0;
 }
-
+/* makes each column touch each other without a gap between them. */
 .col {
   padding: 0%;
 }
 
-#saveBtn {
-  float: right;
-}
-
+/* moves the content of the planner towards the middle of the page */
 #planner {
   margin: 10rem;
 }
 
 .present {
   background-color: red;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .past {
   background-color: lightgray;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .future {
   background-color: green;
+  font-family: 'Open Sans', sans-serif;
 }
