@@ -109,14 +109,14 @@ for (i = 1; i < 10; i++) {
   changeTime();
   // makes a new row and increments time by 1 so that another time slot can be created.
   $("#planner").append("<article class='row' style='margin-left:15%;' id=timeRow" + time++ + ">");
-  $("#timeRow" + i).append("<article class='col-1' style='text-align:right; padding-top:5px; border:1px solid black;'>" + timeText);
+  $("#timeRow" + i).append("<article class='col-1' style='text-align:right; margin-bottom: 10px; padding-top:5px; border:1px solid black; background:white;'>" + timeText);
   $("#timeRow" + i).append("<article class='col' id='plannerText" + i + "'>");
   // pulls textarea box from bootstrap and appends it to the column plannerText for each row. used for taking in user input.
   $("#plannerText" + i).append("<section class='input-group'>");
   $("#plannerText" + i).append("<section class='input-group-append'>");
-  $("#plannerText" + i).append("<textarea class='form-control' name='textArea" + i + "' id='textArea" + i + "' aria-label='With textarea'>");
+  $("#plannerText" + i).append("<textarea class='form-control' style='border:1px solid black; margin-bottom: 10px' name='textArea" + i + "' id='textArea" + i + "' aria-label='With textarea'>");
   // creates a column so that the button image can be appended to it.
-  $("#timeRow" + i).append("<article class='col-1' style='border:1px solid black; background:cyan;' id=saveIcon" + i + ">");
+  $("#timeRow" + i).append("<article class='col-1' style='border:1px solid black; background:cyan; margin-bottom: 10px' id=saveIcon" + i + ">");
   $("#saveIcon" + i).append("<i class='far fa-save' style='padding-left: 40%; padding-top: 35%;' id=saveBtn>");
   // increments by one to move switch statement in changeTIme function down to the next case.
   timeSwitchCount++;

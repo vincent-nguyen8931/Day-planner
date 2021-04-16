@@ -113,7 +113,7 @@ function getJSON(key) {
 
 Credits
 ---------------
-LinkedIn: [https://www.linkedin.com/in/vincent-nguyen-74226a107/](https://www.linkedin.com/in/vincent-nguyen-74226a107/) <br />
+LinkedIn: [https://www.linkedin.com/in/vincent-nguyen8931/](https://www.linkedin.com/in/vincent-nguyen8931/) <br />
 GitHub: [https://github.com/vincent-nguyen8931](https://github.com/vincent-nguyen8931)
 
 

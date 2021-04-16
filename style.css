@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(125, 125, 252);
+}
+
 /* Makes landing page header the center of attention at the top of the page */
 h1 {
   font-family: 'Open Sans', sans-serif;
